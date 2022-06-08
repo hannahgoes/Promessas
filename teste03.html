@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Calculadora</h3>
+    <p id="resultado"></p>
+
+    <script>
+        function display(c){
+            document.getElementById("resultado").innerHTML = c; 
+        }
+
+        let promessa = new Promise(
+            function (resultado, erro){
+
+                var a = 10 
+                var b = 20
+                var c = a + b
+                
+                if(c == undefined){
+                    erro("Erro ao executar a função")
+                }else{
+                    resultado(c)
+                }
+            }
+        )
+
+        promessa.then(
+            function(valor){
+                display(valor)
+            },
+            function(erro){
+                display(erro)
+            }
+        )
+
+    </script>
+
+</body>
+</html>
